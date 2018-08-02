@@ -12,10 +12,10 @@ Simple application to graph jobs dependency in Zuul CI.
 
 ## TODO
 
-[ ] Feed a config directory to the application
-[ ] Select output format
-[ ] Make graph prettier
-[ ] You tell me
+- [ ] Feed a config directory to the application
+- [ ] Select output format
+- [ ] Make graph prettier
+- [ ] You tell me
 
 ## Kudos
 
