@@ -1,7 +1,5 @@
 from collections import defaultdict
-import yaml
 import json
-from pprint import pformat
 
 class Job:
     base_color = '#ccbe00'

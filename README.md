@@ -8,13 +8,15 @@ Simple application to graph jobs dependency in Zuul CI.
 
 ## Usage
 
-`python grapher.py -f path/to/zuul.yaml -o filename` renders graph based on file `path/to/zuul.yaml` to `_output/filename.png` and `.gv` file to `_output/filename`.
+`python grapher.py -c path/to/zuul.yaml -c path/to/config_directory -o
+filename` renders graph based on file `path/to/zuul.yaml` and directory
+`path/to/config_directory` to `_output/filename.png` and graphviz dot-file file to `_output/filename`.
 
 ## TODO
 
-- [ ] Feed a config directory to the application
-- [ ] Select output format
-- [ ] Make graph prettier
+- [x] Feed a config directory to the application
+- [x] Select output format (if it is SVG)
+- [x] Make graph prettier
 - [ ] You tell me
 
 ## Kudos
