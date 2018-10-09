@@ -8,12 +8,16 @@ class ConfigParser:
         for arg in args:
             if os.path.exists(arg):
                 with open(arg) as cfile:
-                    self.__config += yaml.load(cfile)
+                    config_contents = yaml.load(cfile)
+                    for entry in config_contents:
+                        entry['source'] = arg
+                        self.__config.append(entry)
+
             else:
                 print "File %s does not exist, skipping." % arg
 
     def getJobs(self):
         for entry in self.__config:
             if 'job' in entry.keys():
-                yield Job(entry['job'])
+                yield Job(entry['job'], source=entry['source'])
 

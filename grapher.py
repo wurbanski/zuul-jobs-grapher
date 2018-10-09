@@ -16,7 +16,7 @@ def argumentParser():
 def main():
     args = argumentParser()
     config = ConfigParser(*args.jobfile)
-    gd = GraphDrawer(format='png')
+    gd = GraphDrawer(format='svg')
     gd.add_nodes([job.asNode() for job in config.getJobs()])
     gd.add_edges([job.asEdge() for job in config.getJobs() if job.asEdge()])
 
