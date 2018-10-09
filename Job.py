@@ -1,4 +1,6 @@
 from collections import defaultdict
+import yaml
+import json
 from pprint import pformat
 
 class Job:
@@ -29,14 +31,19 @@ class Job:
         d = defaultdict(lambda: '-')
         d.update(self.__dict__)
 
-        return """defined in: %(source)s
+        tooltip = """defined in: %(source)s
 
 pre-run: %(pre-run)s
 run: %(run)s
 post-run: %(post-run)s
 
-vars: %(vars)s
+nodeset: %(nodeset)s
+
+vars:
 """ % d
+
+        tooltip +=  json.dumps(d['vars'], indent=4, separators=(',', ':'))
+        return tooltip
 
     def asEdge(self):
         if self.__dict__.get('parent', None):
