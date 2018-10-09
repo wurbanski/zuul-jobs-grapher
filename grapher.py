@@ -4,18 +4,18 @@ from GraphDrawer import GraphDrawer
 
 def argumentParser():
     parser = argparse.ArgumentParser(description='Display job dependency graph')
-    parser.add_argument('-f', '--file', action='append', required=True,
-                        dest='jobfile',
-                        help='filename (can be called multiple times for' +
-                        ' multiple files)')
+    parser.add_argument('-c', '--config', action='append', required=True,
+                        dest='config',
+                        help='config file or directory (can be called multiple times for' +
+                        ' multiple entries)')
     parser.add_argument('-o', '--out', action='store', required=True,
                         dest='outfile',
-                        help='outfile name (.png format)')
+                        help='outfile name (.svg format implicit)')
     return parser.parse_args()
 
 def main():
     args = argumentParser()
-    config = ConfigParser(*args.jobfile)
+    config = ConfigParser(*args.config)
     gd = GraphDrawer(format='svg')
     gd.add_nodes([job.asNode() for job in config.getJobs()])
     gd.add_edges([job.asEdge() for job in config.getJobs() if job.asEdge()])
