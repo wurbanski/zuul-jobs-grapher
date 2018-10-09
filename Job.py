@@ -13,4 +13,9 @@ class Job:
         return None
 
     def asNode(self):
-        return (self.name), {'label': self.name}
+        return (self.name), {'label': self.name, 
+                             'fillcolor': '#fffde0' if self.isBase() else '#ffffff',
+                             'style': 'filled'}
+
+    def isBase(self):
+        return self.name.endswith('-base')
