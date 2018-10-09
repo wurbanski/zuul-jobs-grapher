@@ -18,4 +18,4 @@ class Job:
                              'style': 'filled'}
 
     def isBase(self):
-        return self.name.endswith('-base')
+        return self.name.endswith('base')
