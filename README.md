@@ -1,6 +1,8 @@
 # zuul-jobs-grapher
 Simple application to graph jobs dependency in Zuul CI.
 
+*NOTE: This repository has been moved to [tungsten-infra](https://github.com/tungsten-infra/zuul-jobs-grapher.git) for development*
+
 ## Requirements
 
 1. graphviz binaries available in `$PATH`
